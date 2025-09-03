@@ -3,6 +3,7 @@ import express from "express";
 const router = express.Router();
 export default router;
 
+// Reusable function to check if input is an integer
 function checkInteger(id) {
     if (!/^-?\d+(\.\d+)?$/.test(id) || id < 0) return res.status(400).send('Only enter positive integers')
 }

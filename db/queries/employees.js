@@ -4,9 +4,7 @@ import db from '#db/client'
 export async function createEmployee({ name, birthday, salary }) {
   const SQL = `INSERT INTO employees(name, birthday, salary) VALUES($1, $2, $3) RETURNING *` //returns what's added
   const { rows: addedEmployees } = await db.query(SQL, [name, birthday, salary]) // returns values of rows from the obj
-  // console.log(await getEmployees()) // TODO Delete it at the end, just added for debugging.
   return addedEmployees[0]
-
 }
 
 // === Part 2 ===
